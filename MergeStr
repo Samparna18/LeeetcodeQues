@@ -1,0 +1,45 @@
+class Solution
+{
+    public String mergeAlternately(String word1,String word2)
+    {
+      String nwstr="";
+      if(word1.length()==word2.length())
+      {
+        for(int i=0;i<word1.length();i++)
+        {
+            nwstr=nwstr+word1.charAt(i)+word2.charAt(i);
+        }
+      }
+      else if(word1.length()>word2.length())
+      {
+         for(int j=0;j<word1.length();j++)
+         {
+            while(j<word2.length())
+            {
+                nwstr=nwstr+word1.charAt(j)+word2.charAt(j);
+                j++;
+            }
+            nwstr=nwstr+word1.charAt(j)+"";
+         }
+      }
+      else 
+      {
+         for(int j=0;j<word2.length();j++)
+         {
+            while(j<word1.length())
+            {
+                nwstr=nwstr+word1.charAt(j)+word2.charAt(j);
+                j++;
+            }
+            nwstr=nwstr+""+word2.charAt(j);
+         }
+      }
+      return nwstr;
+    }
+    public static void main(String args[])
+    {
+        Solution ob=new Solution();
+        String nw=ob.mergeAlternately("abc","pqrst");
+        System.out.println(nw);
+    }
+}
