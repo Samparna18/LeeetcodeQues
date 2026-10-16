@@ -1,0 +1,23 @@
+class Solution
+{
+    public String capitalizeTitle(String title)
+    {
+        title=title.toLowerCase();
+        String nwstr="";
+        String[] word=title.split(" ");
+        for(int i=0;i<word.length;i++)
+        {
+            if(word[i].length()<=2)
+             nwstr+=word[i];
+            else
+            {
+             nwstr=nwstr+(Character.toUpperCase(word[i].charAt(0)));
+             nwstr+=word[i].substring(1);
+            }
+            if(i<word.length-1)
+             nwstr+=" ";
+
+        }
+        return nwstr;
+    }
+}
